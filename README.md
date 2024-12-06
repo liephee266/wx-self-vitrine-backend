@@ -1,117 +1,61 @@
-# wx-self-vitrine-backend
+# 🚀 Getting started with Strapi
 
-Voici un exemple de fichier `README.md` pour un projet utilisant **Strapi.js** :
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
-`# Strapi Project
+### `develop`
 
-## 📖 Description
-Ce projet est une application développée avec **Strapi.js**, un CMS headless moderne, flexible et extensible. Il permet de gérer des contenus structurés pour diverses applications web, mobiles ou toute autre plateforme.
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-Strapi facilite la création d'API performantes tout en offrant une interface d'administration intuitive pour gérer les données.
+```
+npm run develop
+# or
+yarn develop
+```
+
+### `start`
+
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+
+```
+npm run start
+# or
+yarn start
+```
+
+### `build`
+
+Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+
+```
+npm run build
+# or
+yarn build
+```
+
+## ⚙️ Deployment
+
+Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+
+```
+yarn strapi deploy
+```
+
+## 📚 Learn more
+
+- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
+- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
+- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+
+Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+
+## ✨ Community
+
+- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
+- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
 
 ---
 
-## 🚀 Fonctionnalités
-- **Gestion de contenu :** Création et organisation de collections, types de contenu dynamiques.
-- **API REST/GraphQL :** Strapi expose automatiquement des API performantes pour interagir avec vos données.
-- **Authentification et Autorisation :** Gestion avancée des rôles et des permissions pour sécuriser l'accès.
-- **Extensibilité :** Possibilité de personnaliser facilement les fonctionnalités avec des plugins ou du code customisé.
-- **Compatible avec de multiples bases de données :** SQLite (par défaut), MySQL, PostgreSQL ou MongoDB.
-- **Support Multilingue (i18n) :** Gérer du contenu dans plusieurs langues.
-
----
-
-## 🛠️ Installation et Configuration
-
-### 1. Pré-requis
-Assurez-vous que votre machine dispose des éléments suivants :
-- [Node.js](https://nodejs.org/) (v16 ou plus récent)
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
-- Base de données compatible (SQLite, MySQL, PostgreSQL, MongoDB)
-
-### 2. Installation
-1. Clonez ce dépôt :
-   ```bash
-   git clone https://github.com/nom-utilisateur/nom-projet.git
-   cd nom-projet` 
-
-2.  Installez les dépendances :
-    
-    `npm install
-    # ou
-    yarn install` 
-    
-3.  Configurez la base de données : Modifiez le fichier `config/database.js` pour adapter les paramètres à votre environnement.
-    
-4.  Lancez le projet en mode développement :
-    
-    `npm run develop
-    # ou
-    yarn develop` 
-    
-5.  Accédez à l'interface d'administration sur `http://localhost:1337/admin`.
-    
-
-* * *
-
-📂 Structure du Projet
-----------------------
-
-*   `/api` : Dossier contenant les API (collections, single types, etc.).
-*   `/components` : Définition des composants réutilisables.
-*   `/extensions` : Extensions personnalisées ou plugins.
-*   `/config` : Fichiers de configuration (base de données, serveur, plugins).
-*   `/public` : Fichiers publics accessibles depuis l'API.
-
-* * *
-
-⚙️ Scripts Disponibles
-----------------------
-
-*   **Démarrer en mode développement :**
-    
-    `npm run develop` 
-    
-*   **Construire l'application pour la production :**
-    
-    `npm run build` 
-    
-*   **Démarrer l'application en mode production :**
-    
-    `npm run start` 
-    
-
-* * *
-
-🔒 Authentification
--------------------
-
-Strapi fournit un système d'authentification complet avec JWT. Configurez vos rôles et permissions dans l'interface d'administration pour sécuriser vos API.
-
-* * *
-
-📖 Documentation
-----------------
-
-*   Documentation Officielle Strapi
-
-* * *
-
-💡 Contribuer
--------------
-
-Les contributions sont les bienvenues ! Ouvrez une **issue** ou soumettez une **pull request** pour proposer des améliorations.
-
-* * *
-
-📝 Licence
-----------
-
-Ce projet est sous licence MIT.
-
-* * *
-
-👤 Auteur
----------
-
-*   Wx
+<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
