@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-09T14:34:58.127Z"
+    "x-generation-date": "2024-12-10T10:10:24.483Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5974,6 +5974,9 @@
                   "example": "string or id"
                 }
               },
+              "url": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -6053,7 +6056,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "titre": {
+                "nom_section": {
                   "type": "string"
                 },
                 "description": {
@@ -6660,7 +6663,7 @@
                     }
                   }
                 },
-                "nom_section": {
+                "titre": {
                   "type": "string"
                 },
                 "groups": {
@@ -7146,6 +7149,9 @@
               }
             }
           },
+          "url": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -7210,6 +7216,9 @@
                       }
                     }
                   }
+                },
+                "url": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",
@@ -7287,7 +7296,7 @@
           "data": {
             "type": "object",
             "properties": {
-              "titre": {
+              "nom_section": {
                 "type": "string"
               },
               "description": {
@@ -7307,7 +7316,7 @@
                 ],
                 "example": "string or id"
               },
-              "nom_section": {
+              "titre": {
                 "type": "string"
               },
               "groups": {
@@ -7389,7 +7398,7 @@
           "documentId": {
             "type": "string"
           },
-          "titre": {
+          "nom_section": {
             "type": "string"
           },
           "description": {
@@ -7996,7 +8005,7 @@
               }
             }
           },
-          "nom_section": {
+          "titre": {
             "type": "string"
           },
           "groups": {
@@ -8476,7 +8485,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "titre": {
+                "nom_section": {
                   "type": "string"
                 },
                 "description": {
@@ -8614,7 +8623,7 @@
                     }
                   }
                 },
-                "nom_section": {
+                "titre": {
                   "type": "string"
                 },
                 "groups": {
