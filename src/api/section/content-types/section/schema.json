@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "singularName": "section",
+    "pluralName": "sections",
+    "displayName": "Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom_section": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "about": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "titre": {
+      "type": "string"
+    },
+    "groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::group.group"
+    }
+  }
+}
