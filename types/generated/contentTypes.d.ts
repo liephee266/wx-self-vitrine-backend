@@ -374,7 +374,9 @@ export interface ApiCategoriesLienCategoriesLien
   collectionName: 'categories_liens';
   info: {
     description: '';
-    displayName: 'Categories_lien';
+
+    displayName: 'categoriesLiens';
+
     pluralName: 'categories-liens';
     singularName: 'categories-lien';
   };
@@ -387,6 +389,7 @@ export interface ApiCategoriesLienCategoriesLien
       Schema.Attribute.Private;
     footer: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     header: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    lien_pages: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -394,7 +397,6 @@ export interface ApiCategoriesLienCategoriesLien
     > &
       Schema.Attribute.Private;
     nom: Schema.Attribute.String;
-    pages_list: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -418,7 +420,7 @@ export interface ApiComponentComponent extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     groups: Schema.Attribute.Relation<'oneToMany', 'api::group.group'>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -457,7 +459,7 @@ export interface ApiGroupGroup extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::group.group'> &
@@ -517,7 +519,7 @@ export interface ApiSectionSection extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     groups: Schema.Attribute.Relation<'oneToMany', 'api::group.group'>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

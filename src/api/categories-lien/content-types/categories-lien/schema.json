@@ -4,7 +4,7 @@
   "info": {
     "singularName": "categories-lien",
     "pluralName": "categories-liens",
-    "displayName": "Categories_lien",
+    "displayName": "categoriesLiens",
     "description": ""
   },
   "options": {
@@ -15,15 +15,15 @@
     "nom": {
       "type": "string"
     },
-    "header": {
-      "type": "boolean",
-      "default": false
-    },
     "footer": {
       "type": "boolean",
       "default": false
     },
-    "pages_list": {
+    "header": {
+      "type": "boolean",
+      "default": false
+    },
+    "lien_pages": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::page.page"

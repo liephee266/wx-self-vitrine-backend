@@ -15,9 +15,6 @@
     "titre": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "about": {
       "type": "text"
     },
@@ -42,6 +39,9 @@
     },
     "nom_groupe": {
       "type": "string"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

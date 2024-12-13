@@ -15,9 +15,6 @@
     "nom_component": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "about": {
       "type": "text"
     },
@@ -38,6 +35,9 @@
     },
     "titre": {
       "type": "string"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
