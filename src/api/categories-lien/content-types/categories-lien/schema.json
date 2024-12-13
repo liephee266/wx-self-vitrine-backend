@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories_liens",
+  "info": {
+    "singularName": "categories-lien",
+    "pluralName": "categories-liens",
+    "displayName": "categoriesLiens",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "footer": {
+      "type": "boolean",
+      "default": false
+    },
+    "header": {
+      "type": "boolean",
+      "default": false
+    },
+    "lien_pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page"
+    }
+  }
+}
