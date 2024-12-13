@@ -15,9 +15,6 @@
     "nom_section": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "about": {
       "type": "text"
     },
@@ -38,6 +35,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::group.group"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
