@@ -38,6 +38,11 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::type-section.type-section"
     }
   }
 }

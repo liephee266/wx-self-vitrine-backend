@@ -430,6 +430,10 @@ export interface ApiComponentComponent extends Struct.CollectionTypeSchema {
     nom_component: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String;
+    type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::type-component.type-component'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -529,6 +533,71 @@ export interface ApiSectionSection extends Struct.CollectionTypeSchema {
     nom_section: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String;
+    type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::type-section.type-section'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTypeComponentTypeComponent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'type_components';
+  info: {
+    displayName: 'Type Component';
+    pluralName: 'type-components';
+    singularName: 'type-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::type-component.type-component'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'basic'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTypeSectionTypeSection extends Struct.CollectionTypeSchema {
+  collectionName: 'type_sections';
+  info: {
+    displayName: 'Type section';
+    pluralName: 'type-sections';
+    singularName: 'type-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::type-section.type-section'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'basic'>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1049,6 +1118,8 @@ declare module '@strapi/strapi' {
       'api::group.group': ApiGroupGroup;
       'api::page.page': ApiPagePage;
       'api::section.section': ApiSectionSection;
+      'api::type-component.type-component': ApiTypeComponentTypeComponent;
+      'api::type-section.type-section': ApiTypeSectionTypeSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

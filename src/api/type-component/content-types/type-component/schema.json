@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_components",
+  "info": {
+    "singularName": "type-component",
+    "pluralName": "type-components",
+    "displayName": "Type Component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "default": "basic",
+      "unique": true
+    }
+  }
+}
