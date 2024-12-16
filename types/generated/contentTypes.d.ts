@@ -456,6 +456,7 @@ export interface ApiComponentComponent extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     nom_component: Schema.Attribute.String;
+    properties: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String;
     type: Schema.Attribute.Relation<

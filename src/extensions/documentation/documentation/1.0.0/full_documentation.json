@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-15T21:50:20.173Z"
+    "x-generation-date": "2024-12-16T20:31:49.985Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6656,6 +6656,7 @@
                                       }
                                     }
                                   },
+                                  "properties": {},
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -7600,6 +7601,7 @@
                 ],
                 "example": "string or id"
               },
+              "properties": {},
               "locale": {
                 "type": "string"
               },
@@ -8649,6 +8651,7 @@
                           }
                         }
                       },
+                      "properties": {},
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -8780,6 +8783,7 @@
               }
             }
           },
+          "properties": {},
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -10005,6 +10009,7 @@
                     }
                   }
                 },
+                "properties": {},
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -11230,6 +11235,7 @@
                                 }
                               }
                             },
+                            "properties": {},
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -12713,6 +12719,7 @@
                           }
                         }
                       },
+                      "properties": {},
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
