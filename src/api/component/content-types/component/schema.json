@@ -33,9 +33,6 @@
       "relation": "oneToMany",
       "target": "api::group.group"
     },
-    "titre": {
-      "type": "string"
-    },
     "description": {
       "type": "richtext"
     },
@@ -46,6 +43,9 @@
     },
     "properties": {
       "type": "json"
+    },
+    "titre": {
+      "type": "string"
     }
   }
 }

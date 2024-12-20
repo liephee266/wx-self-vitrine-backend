@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-16T20:31:49.985Z"
+    "x-generation-date": "2024-12-19T20:10:07.383Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6287,9 +6287,6 @@
                             "documentId": {
                               "type": "string"
                             },
-                            "titre": {
-                              "type": "string"
-                            },
                             "about": {
                               "type": "string"
                             },
@@ -6585,9 +6582,6 @@
                                       }
                                     }
                                   },
-                                  "titre": {
-                                    "type": "string"
-                                  },
                                   "description": {
                                     "type": "string"
                                   },
@@ -6657,6 +6651,9 @@
                                     }
                                   },
                                   "properties": {},
+                                  "titre": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -6715,6 +6712,9 @@
                               "type": "string"
                             },
                             "description": {
+                              "type": "string"
+                            },
+                            "titre": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -7584,9 +7584,6 @@
                   "example": "string or id"
                 }
               },
-              "titre": {
-                "type": "string"
-              },
               "description": {
                 "type": "string"
               },
@@ -7602,6 +7599,9 @@
                 "example": "string or id"
               },
               "properties": {},
+              "titre": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -8282,9 +8282,6 @@
                 "documentId": {
                   "type": "string"
                 },
-                "titre": {
-                  "type": "string"
-                },
                 "about": {
                   "type": "string"
                 },
@@ -8580,9 +8577,6 @@
                           }
                         }
                       },
-                      "titre": {
-                        "type": "string"
-                      },
                       "description": {
                         "type": "string"
                       },
@@ -8652,6 +8646,9 @@
                         }
                       },
                       "properties": {},
+                      "titre": {
+                        "type": "string"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -8712,6 +8709,9 @@
                 "description": {
                   "type": "string"
                 },
+                "titre": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -8766,9 +8766,6 @@
               }
             }
           },
-          "titre": {
-            "type": "string"
-          },
           "description": {
             "type": "string"
           },
@@ -8784,6 +8781,9 @@
             }
           },
           "properties": {},
+          "titre": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -8857,9 +8857,6 @@
           "data": {
             "type": "object",
             "properties": {
-              "titre": {
-                "type": "string"
-              },
               "about": {
                 "type": "string"
               },
@@ -8895,6 +8892,9 @@
                 "type": "string"
               },
               "description": {
+                "type": "string"
+              },
+              "titre": {
                 "type": "string"
               },
               "locale": {
@@ -8960,9 +8960,6 @@
             "type": "number"
           },
           "documentId": {
-            "type": "string"
-          },
-          "titre": {
             "type": "string"
           },
           "about": {
@@ -9726,9 +9723,6 @@
                       "documentId": {
                         "type": "string"
                       },
-                      "titre": {
-                        "type": "string"
-                      },
                       "about": {
                         "type": "string"
                       },
@@ -9884,6 +9878,9 @@
                       "description": {
                         "type": "string"
                       },
+                      "titre": {
+                        "type": "string"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -9937,9 +9934,6 @@
                       }
                     }
                   }
-                },
-                "titre": {
-                  "type": "string"
                 },
                 "description": {
                   "type": "string"
@@ -10010,6 +10004,9 @@
                   }
                 },
                 "properties": {},
+                "titre": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -10068,6 +10065,9 @@
             "type": "string"
           },
           "description": {
+            "type": "string"
+          },
+          "titre": {
             "type": "string"
           },
           "createdAt": {
@@ -10866,9 +10866,6 @@
                       "documentId": {
                         "type": "string"
                       },
-                      "titre": {
-                        "type": "string"
-                      },
                       "about": {
                         "type": "string"
                       },
@@ -11164,9 +11161,6 @@
                                 }
                               }
                             },
-                            "titre": {
-                              "type": "string"
-                            },
                             "description": {
                               "type": "string"
                             },
@@ -11236,6 +11230,9 @@
                               }
                             },
                             "properties": {},
+                            "titre": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -11294,6 +11291,9 @@
                         "type": "string"
                       },
                       "description": {
+                        "type": "string"
+                      },
+                      "titre": {
                         "type": "string"
                       },
                       "createdAt": {
@@ -12350,9 +12350,6 @@
                 "documentId": {
                   "type": "string"
                 },
-                "titre": {
-                  "type": "string"
-                },
                 "about": {
                   "type": "string"
                 },
@@ -12648,9 +12645,6 @@
                           }
                         }
                       },
-                      "titre": {
-                        "type": "string"
-                      },
                       "description": {
                         "type": "string"
                       },
@@ -12720,6 +12714,9 @@
                         }
                       },
                       "properties": {},
+                      "titre": {
+                        "type": "string"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -12778,6 +12775,9 @@
                   "type": "string"
                 },
                 "description": {
+                  "type": "string"
+                },
+                "titre": {
                   "type": "string"
                 },
                 "createdAt": {

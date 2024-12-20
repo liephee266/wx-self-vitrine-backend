@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "titre": {
-      "type": "string"
-    },
     "about": {
       "type": "text"
     },
@@ -42,6 +39,9 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "titre": {
+      "type": "string"
     }
   }
 }
