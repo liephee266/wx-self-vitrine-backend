@@ -4,7 +4,8 @@
   "info": {
     "singularName": "type-section",
     "pluralName": "type-sections",
-    "displayName": "Type section"
+    "displayName": "Type section",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

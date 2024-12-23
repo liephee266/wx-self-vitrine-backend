@@ -576,6 +576,7 @@ export interface ApiTypeComponentTypeComponent
   extends Struct.CollectionTypeSchema {
   collectionName: 'type_components';
   info: {
+    description: '';
     displayName: 'Type Component';
     pluralName: 'type-components';
     singularName: 'type-component';
@@ -587,6 +588,10 @@ export interface ApiTypeComponentTypeComponent
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -606,6 +611,7 @@ export interface ApiTypeComponentTypeComponent
 export interface ApiTypeSectionTypeSection extends Struct.CollectionTypeSchema {
   collectionName: 'type_sections';
   info: {
+    description: '';
     displayName: 'Type section';
     pluralName: 'type-sections';
     singularName: 'type-section';

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "type-component",
     "pluralName": "type-components",
-    "displayName": "Type Component"
+    "displayName": "Type Component",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,16 @@
       "type": "string",
       "default": "basic",
       "unique": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
