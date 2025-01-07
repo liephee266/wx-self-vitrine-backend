@@ -385,8 +385,10 @@ export interface ApiCategoriesLienCategoriesLien
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     footer: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     header: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     lien_pages: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -395,6 +397,7 @@ export interface ApiCategoriesLienCategoriesLien
     > &
       Schema.Attribute.Private;
     nom: Schema.Attribute.String;
+    position: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -516,6 +519,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    class: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -525,6 +529,10 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     nom_page: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.Relation<'oneToMany', 'api::section.section'>;
+    sous_pages: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sous-page.sous-page'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -547,6 +555,7 @@ export interface ApiSectionSection extends Struct.CollectionTypeSchema {
   };
   attributes: {
     about: Schema.Attribute.Text;
+    class: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -569,6 +578,38 @@ export interface ApiSectionSection extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSousPageSousPage extends Struct.CollectionTypeSchema {
+  collectionName: 'sous_pages';
+  info: {
+    description: '';
+    displayName: 'Sous_page';
+    pluralName: 'sous-pages';
+    singularName: 'sous-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    class: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sous-page.sous-page'
+    > &
+      Schema.Attribute.Private;
+    nom_page: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Relation<'oneToMany', 'api::section.section'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String & Schema.Attribute.Unique;
   };
 }
 
@@ -1154,6 +1195,7 @@ declare module '@strapi/strapi' {
       'api::group.group': ApiGroupGroup;
       'api::page.page': ApiPagePage;
       'api::section.section': ApiSectionSection;
+      'api::sous-page.sous-page': ApiSousPageSousPage;
       'api::type-component.type-component': ApiTypeComponentTypeComponent;
       'api::type-section.type-section': ApiTypeSectionTypeSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
