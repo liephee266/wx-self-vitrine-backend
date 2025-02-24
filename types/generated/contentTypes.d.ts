@@ -374,9 +374,7 @@ export interface ApiCategoriesLienCategoriesLien
   collectionName: 'categories_liens';
   info: {
     description: '';
-
     displayName: 'categoriesLiens';
-
     pluralName: 'categories-liens';
     singularName: 'categories-lien';
   };
