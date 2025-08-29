@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "pages",
+  "collectionName": "sous_pages",
   "info": {
-    "singularName": "page",
-    "pluralName": "pages",
-    "displayName": "Page",
+    "singularName": "sous-page",
+    "pluralName": "sous-pages",
+    "displayName": "Sous_page",
     "description": ""
   },
   "options": {
@@ -15,23 +15,17 @@
     "nom_page": {
       "type": "string"
     },
-    "sections": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::section.section"
-    },
     "url": {
       "type": "string",
-      "unique": true,
-      "required": true
+      "unique": true
     },
     "class": {
       "type": "string"
     },
-    "sous_pages": {
+    "sections": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::sous-page.sous-page"
+      "target": "api::section.section"
     }
   }
 }

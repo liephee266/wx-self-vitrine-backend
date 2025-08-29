@@ -374,9 +374,7 @@ export interface ApiCategoriesLienCategoriesLien
   collectionName: 'categories_liens';
   info: {
     description: '';
-
     displayName: 'categoriesLiens';
-
     pluralName: 'categories-liens';
     singularName: 'categories-lien';
   };
@@ -387,8 +385,10 @@ export interface ApiCategoriesLienCategoriesLien
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     footer: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     header: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     lien_pages: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -397,6 +397,35 @@ export interface ApiCategoriesLienCategoriesLien
     > &
       Schema.Attribute.Private;
     nom: Schema.Attribute.String;
+    position: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiColorColor extends Struct.CollectionTypeSchema {
+  collectionName: 'colors';
+  info: {
+    displayName: 'color';
+    pluralName: 'colors';
+    singularName: 'color';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::color.color'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'default_'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -430,8 +459,13 @@ export interface ApiComponentComponent extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     nom_component: Schema.Attribute.String;
+    properties: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String;
+    type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::type-component.type-component'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -485,6 +519,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    class: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -494,6 +529,10 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     nom_page: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.Relation<'oneToMany', 'api::section.section'>;
+    sous_pages: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sous-page.sous-page'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -516,6 +555,7 @@ export interface ApiSectionSection extends Struct.CollectionTypeSchema {
   };
   attributes: {
     about: Schema.Attribute.Text;
+    class: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -531,6 +571,109 @@ export interface ApiSectionSection extends Struct.CollectionTypeSchema {
     nom_section: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String;
+    type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::type-section.type-section'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSousPageSousPage extends Struct.CollectionTypeSchema {
+  collectionName: 'sous_pages';
+  info: {
+    description: '';
+    displayName: 'Sous_page';
+    pluralName: 'sous-pages';
+    singularName: 'sous-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    class: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sous-page.sous-page'
+    > &
+      Schema.Attribute.Private;
+    nom_page: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Relation<'oneToMany', 'api::section.section'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String & Schema.Attribute.Unique;
+  };
+}
+
+export interface ApiTypeComponentTypeComponent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'type_components';
+  info: {
+    description: '';
+    displayName: 'Type Component';
+    pluralName: 'type-components';
+    singularName: 'type-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::type-component.type-component'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'basic'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTypeSectionTypeSection extends Struct.CollectionTypeSchema {
+  collectionName: 'type_sections';
+  info: {
+    description: '';
+    displayName: 'Type section';
+    pluralName: 'type-sections';
+    singularName: 'type-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::type-section.type-section'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'basic'>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1047,10 +1190,14 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::categories-lien.categories-lien': ApiCategoriesLienCategoriesLien;
+      'api::color.color': ApiColorColor;
       'api::component.component': ApiComponentComponent;
       'api::group.group': ApiGroupGroup;
       'api::page.page': ApiPagePage;
       'api::section.section': ApiSectionSection;
+      'api::sous-page.sous-page': ApiSousPageSousPage;
+      'api::type-component.type-component': ApiTypeComponentTypeComponent;
+      'api::type-section.type-section': ApiTypeSectionTypeSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -27,6 +27,24 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::page.page"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "position": {
+      "type": "integer",
+      "default": 1
     }
   }
 }
